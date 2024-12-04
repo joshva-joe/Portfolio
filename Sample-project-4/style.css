@@ -1,0 +1,720 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+header{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    padding: 10px;
+    background-color: red;
+    color: white;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+.navbar h1{
+    color:rgb(74,82,154);
+    font-size: 30px;
+}
+.subNav{
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    transition: all 1.5s;
+}
+.subNav a{
+    text-decoration: none;
+    color: rgb(74,82,154);
+}
+.subNav a:nth-child(4){
+    background-color: rgb(74,82,154);
+    color: white;
+    padding: 7px 10px;
+    border-radius: 20px;
+    transition: all 1s;
+}
+.subNav a:nth-child(4):hover{
+    translate:0px -10px ;
+}
+.checkbox{
+    display: none;
+}
+#check{
+    display: none;
+}
+input:checked~.subNav{
+    background-color:rgb(0, 0, 0);
+    left: 0px;
+}
+/*Home-page*/
+.home{
+    min-height: 90vh;
+    width: 100%;    
+}
+/* Slideshow container */
+   .slideshow-container {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    overflow: hidden;
+}
+
+/*Slides */
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 90vh;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    animation: fade 12s infinite;
+}
+
+/* Individual slide Images */
+.slide:nth-child(1) {
+    background-image: url('./images/home-page-1.png');
+    animation-delay: 0s;
+}
+
+.slide:nth-child(2) {
+    background-image: url('./images/home-page-2.png');
+    animation-delay: 4s;
+}
+
+.slide:nth-child(3) {
+    background-image: url('./images/home-page-3.png');
+    animation-delay: 8s;
+}
+
+/* Animation Keyframes For Slides*/
+@keyframes fade {
+    0% { opacity: 0; }
+    8% { opacity: 0.5; }
+    33% { opacity: 0.8; }
+    41% { opacity: 0; }
+    100% { opacity: 0; }
+}
+.slide-content {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    font-size: 2rem;
+    background-color: rgb(0, 0, 0);
+    padding: 10px;
+    border-radius: 5px;
+}
+/*About-Us-Page*/
+.about{
+    width: 100%;
+    min-height: 100vh;
+    padding: 10px;
+}
+.about-head{
+    text-align: center;
+    font-size: 30px;
+    margin: 10px 0px;
+}
+.about .left{
+    width: 600px;
+    height: 500px;
+}
+.about .right{
+    width: 600px;
+    min-height: 500px;  
+}
+.about .right h1{
+    margin-bottom: 10px;
+    font-size: 40px;
+    color: rgb(74,82,154);
+}
+.right h1 span{
+    color: rgb(97,196,214);
+}
+.about .right p{
+    text-align: justify;
+    line-height: 25PX;
+}
+.about .right button{
+    padding: 10px 14px;
+    border-radius: 20px;
+    background-color: rgb(97,196,214);
+    border: none;
+    font-weight: bold;
+    color: white;
+    margin-top: 5px;
+    transition: all 1s;
+}
+.about .right button:hover{
+    translate: 0px -10px;
+}
+ .about .left img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.about-content{
+    display: flex;
+    justify-content: center;
+    align-items:flex-start;
+    gap: 20px;
+}
+/*Doctors-page*/
+.doctors{
+    min-height: 100vh;
+    padding: 20px;
+    background-color: rgb(96,195,214);
+}
+.doctors-head{
+    text-align: center;
+    color: white;
+}
+.doctors-head-2{
+    font-size:40px;
+    margin-top: 10px;
+    color: rgb(74,82,154);
+}
+.doctor-cards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+.doctor-card{
+    width: 400px;
+    height: 350px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 7px;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    transition: all 1s;
+    overflow: hidden;
+}
+.doctor-card img{
+    width:80px;
+    border: 5px solid rgb(237,241,252);
+    height:80px;
+    border-radius: 50%;
+}
+.doctor-card h2{
+    margin: 10px 0px;
+}
+.doctor-card p{
+    line-height: 25px;
+}
+.doctor-card button{
+    padding: 7px 0px;
+    border: none;
+    margin-top: 10px;
+    background-color: transparent;
+    border-bottom: 2px solid white;
+}
+.doctor-card::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    left: 0;
+    bottom:100%;
+    background-color:#231753;
+    position: absolute;
+    transition: all 1s;
+    z-index: -1;
+}
+.doctor-card:hover{
+    scale: 1.05;
+    color: white;
+}
+.doctor-card:hover button{
+    color: white;
+}
+.doctor-card:hover img{
+    background-color: white;
+}
+.doctor-card:hover::before{
+   bottom: 0px;
+}
+.about-btns{
+    display: flex;
+    justify-content: center;
+}
+.about-btn{
+    padding: 10px 30px;
+    font-weight: bold;
+    color: white;
+    margin-top: 30px;
+    border-radius: 20px;
+    background-color: #231753;
+    font-size: 15px;
+    transition: all 1s;
+}
+.about-btn:hover{
+    translate: 0px -10px;
+    background-color: lightblue;
+}
+/*Details-page*/
+.detail{
+    min-height: 70vh;
+}
+.details{
+    width: 100%;
+    min-height: 50vh;
+    background: url('./images/Meridian-Hospital.png') no-repeat;
+    background-position: 0% 10%;
+    background-size: cover;
+    position: relative;
+}
+.details-cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    position: absolute;
+    bottom: -80px;
+    left: 5%;
+}
+.details h1{
+    font-size: 50px;
+    color: #231753;
+    position: absolute;
+    top: 50px;
+    left: 150px;
+}
+.details-card{
+    width: 250px;
+    height: 130px;
+    border-radius: 8px;
+    background-color: #d1f9ff;
+    text-align: center;
+    padding: 10px;
+    transition: all 1.5s;
+    box-shadow: 0px 0px 2px black;
+}
+.details-card:hover{
+    background-color: white;
+}
+.details-card img{
+    width: 40px;
+    height: 40px;
+}
+.details-card h3{
+    margin-top: 20px;
+}
+/*Board of Director’s Message*/
+
+.board-dir{
+   min-height: 50vh;
+
+}
+.board-head{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    margin: auto;
+    color:#231753;
+    font-size: 2.5rem;
+    padding: 50px 30px 0px 30px;
+}
+.board-head p{
+    font-size: 1rem;
+    margin-top: 10px;
+    line-height: 25px;
+}
+.board-head div p:nth-child(2){
+    text-align: center;
+    margin-top: 0px;
+}
+/*why-choose-us*/
+.why-choose-us{
+    width: 100%;
+    min-height: 70vh;
+    display: flex;
+    color: white;
+}
+.why-choose-us .left{
+    width: 759px;
+    min-height: 600px;
+}
+.why-choose-us .left img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.why-choose-us .right{
+    width: 760px;
+    min-height:600px; 
+    display: flex;
+    gap: 20px;
+    flex-direction: column; 
+    padding: 20px 0px 20px 80px;
+    background-image: linear-gradient(to bottom,rgb(75,90,160),rgb(88,183,228));
+}
+.why-choose-us .right h3{
+    font-size: 2rem;
+}
+.why-choose-us .right h1{
+    font-size: 45px;
+}
+.why-choose-us-contents{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.why-choose-us-contents img{
+    width: 70px;
+    height: 70px;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 50%;
+
+}
+.why-choose-us-content{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/*BLOG-PAGE*/
+.blog{
+    min-height: 60vh;
+    background-color: rgb(240,243,253);
+    padding: 20px;
+
+}
+.blog-head{
+   text-align: center;
+   padding-top: 100px;
+   color: #231753;
+}
+.blog-head h3{
+    font-size: 1.7rem;
+
+}
+.blog-head h1{
+    font-size: 2.7rem;
+}
+.blog-cards{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+.blog-card{
+    width: 400px;
+    height: 300px;
+    margin-top: 30px;
+}
+.blog-card video{
+    width: 100%;
+    height:100%;
+    border-radius: 7px;
+    transition: all 1s;
+}
+.blog-card:hover video{
+    scale: 1.05;
+}
+.blog-btn{
+    text-align: center;
+    margin-top: 30px;
+}
+.blog-btn button{
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    font-weight: bold;
+    background-color:rgb(97,196,214);
+    color: white;
+    transition: all 1s;
+}
+.blog-btn button:hover{
+    translate: 0px -10px;
+}
+/*Footer-Page*/
+footer{
+    min-height: 70vh;
+    background-color: rgb(22,34,77);
+    padding: 20px;
+}
+.footer-content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    min-height: 70vh;
+}
+.footer-card{
+    width: 350px;
+    min-height: 400px;
+}
+.footer-card ul li{
+    list-style: none;
+    padding: 10px 0px;
+}
+.footer-card table td{
+    padding: 10px;
+}
+.footer-bottom{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px 0px;
+    border-top:1px solid white;
+    justify-content: space-between;
+    color: white;
+}
+/*-----------------Doctor.html page- css-------------------*/
+.doctors-data{
+    min-height: 100vh;
+    padding: 20px;
+}
+.doctors-data-head{
+   padding: 50px 60px;
+   font-size: 3rem;
+   color: rgb(74,82,154);
+   background-color: rgb(237,241,252);
+}
+.General-head{
+    text-align: center;
+    font-size: 2rem;
+    color: rgb(74,82,154);
+    margin: 20px 0px;
+}
+.doctors-data-cards{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+.doctors-data-card{
+    width: 380px;
+    min-height: 600px;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0px 0px 1px black;
+    border-radius: 10px;
+}
+.doctors-data-card h2,.doctors-data-card p{
+    margin: 10px;
+    color: #231753;
+}
+.doctors-data-card img{
+    width: 100%;
+    border-radius: 10px;
+    height: auto;
+}
+.doctors-data-card p:nth-child(6),p:nth-child(5){
+    text-align: justify;
+    line-height: 23px;
+}
+.doctors-data-card button{
+    padding: 5px 10px;
+    border-radius: 20px;
+    background-color:rgb(74,82,154);
+    color: white;
+    border: none;
+}
+/* <!-----About-Us-Page----->*/
+.about-data{
+    min-height: 100vh;
+    padding: 20px;
+}
+.about-data-head{
+    padding: 50px 60px;
+    font-size: 3rem;
+    color: rgb(74,82,154);
+    background-color: rgb(237,241,252);
+}
+.about-data-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+.about-data-left{
+    width: 600px;
+    min-height: 500px;
+    padding: 20px 0px;
+}
+.about-data-left p{
+    margin: 10px 0px;
+    text-align: justify;
+    line-height: 25px;
+}
+.about-data-left h1{
+    font-size: 1.5rem;
+    color:rgb(94,98,163);
+}
+.about-data-right{
+    width: 600px;
+}
+.about-data-right img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+/*Appointment-Page*/
+.appointment{
+    padding: 20px;
+}
+.form-page{
+    display: flex;
+    justify-content: center;
+}
+.form-page form{
+    width: 480px;
+    background-color:rgb(97,196,214);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 10px;
+}
+.form-page form h1{
+    margin-bottom: 20px;
+    color: rgb(74,82,154);
+}
+.form-page form input,select{
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.form-page form input:nth-child(16){
+    background-color: rgb(74,82,154);
+    color: white;
+    font-weight: bold;
+    transition: all 1s;
+}
+.form-page form input:nth-child(16):hover{
+    background-color: #00ddff;
+    color: black;
+}
+/*MOBILE SCREEN*/
+@media  only screen and (min-width:300px) and (max-width:800px){
+    .subNav{
+        flex-direction: column;
+        width: 100%;
+        min-height: 85vh;
+        position: absolute;
+        top: 68px;
+        right: 110%;
+        justify-content: flex-start; 
+    }
+    #check{
+        display: block;
+    }
+    .card{
+        flex-grow: 1;
+    }
+    .about-content{
+        flex-wrap: wrap;
+    }
+    .about .left{
+        width: 100%;
+        height: 100%;
+    }
+    .about .right{
+        width: 100%;
+        height: 100%;
+    }
+    .about .right h1{
+        font-size: 20px;
+    }
+    .right h1{
+        font-size: 20px;
+    }
+    .details{
+        min-height: 100vh;
+    }
+    .details-cards{
+        top: 20%;
+        flex-wrap: wrap;
+    }
+    .details h1{
+        font-size: 20px;
+        left: 50px;
+    }
+    .doctor-card{
+        flex-grow: 1;
+    }
+    .details-cards{
+        flex-wrap: wrap;
+        left: 10px;
+    }
+    .details-card{
+        width: 90%;
+    }
+    .board-head{
+        width: 100%;
+        padding-top: 270px;
+        font-size: 1rem;
+    }
+    .why-choose-us{
+        flex-wrap: wrap;
+    }
+    .why-choose-us .left{
+        width: 100%;
+    }
+    .why-choose-us .right{
+        width: 100%;
+        padding:20px;
+    }
+    .why-choose-us .right h1{
+        font-size: 30px;
+    }
+    .blog-head h1{
+        font-size: 1.5rem;
+    }
+}
+@media  only screen and (min-width:300px) and (max-width:500px){
+
+    .home-content{
+        margin-top: 50px;
+    }
+    header{
+        font-size: 10px;
+    }
+}
+@media  only screen and (min-width:800px) and (max-width:1000px){
+
+    .about .right h1{
+        margin-bottom: 10px;
+        font-size: 25px;
+        color: rgb(74,82,154);
+    }
+    .board-head{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin: auto;
+        color:#231753;
+        font-size: 2rem;
+        padding: 50px 30px 0px 30px;
+    }
+    .details-cards{
+        left: 0%;
+        bottom: -150px;
+    }
+}

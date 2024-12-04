@@ -1,0 +1,510 @@
+:root{
+    --bg:yellow;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: white;
+}
+body{
+    background-color: #1e1c29;
+}
+p,h1,h2,h3,h4{
+    padding: 0;
+    margin: 0;
+}
+/*NAV_BAR*/
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color:#1b1825;
+    height: 80px;
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    z-index: 9999;
+    overflow: hidden;
+}
+.logo{
+    height: 150px;
+    width: 150px;
+    display: flex;
+    object-fit: cover;
+    justify-content: center;
+    align-items: center;
+    transition: all 1s;
+}
+.logo:hover{
+   filter: drop-shadow(0px 1px 10px rgb(255, 255, 255));
+}
+.subNav{
+    display: flex;
+    gap: 30px;
+    position: absolute;
+    right: -100%;
+    top: 30px;
+    transition: all 1s;
+    animation-name:subnav;
+    animation-duration: 2s;
+    animation-fill-mode:forwards;
+    animation-timing-function: ease;
+}
+@keyframes subnav{
+    to{
+        right: 30px;
+    }
+}
+.subNav a{
+    text-decoration: none;
+    color: green;
+    font-size: 20px;
+   
+}
+.subNav a:hover{
+    color: rgb(255, 255, 255);
+}
+.check-box{
+    display: none;
+}
+input:checked~.subNav{
+    background-color:#83818c;
+    left: 0px;
+}
+#label{
+    display: none;
+}
+.icon img{
+    width: 200px;
+    height: 200px; 
+}
+/*HOME_PAGE*/
+.Home{
+    width: 100%;
+    min-height: 100vh;
+    padding: 0;
+    display: flex;
+    margin-top: 70px;
+}
+.Home h1{
+    font-size: 4rem;
+    word-spacing: 12px;
+}
+.Home h3{
+    font-size: 2.5rem;
+}
+.Home p{
+    margin: 10px 0px;
+}
+.left{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    padding: 20px;
+   
+}
+.left-content{
+    width: 60%;
+}
+.right{
+    width: 50%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.right-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+.right-content h1{
+    position: absolute;
+    bottom:-100%;
+    font-size: 2rem;
+    transition: all 1s ease;
+}
+.right-content:hover h1{
+    bottom: 20px;
+}
+.profile{
+    width: 380px;
+    height: 380px;
+    object-fit: cover;
+    overflow: hidden;
+    background: url('./images/Me.png');
+    background-position: 30% 20%;
+    border:2px solid green;
+    background-color: rgba(179, 0, 255, 0.03);
+    border-radius: 50%;
+    animation: flip;
+    animation-timing-function: ease;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+}
+@keyframes flip{
+    0% {
+        transform: rotatey(0deg);
+    }
+    50%{
+        transform: rotatey(180deg);
+    }
+    100%{
+        transform: rotatey(360deg);
+    }
+}
+
+.left-content span{
+    color: green;
+}
+.left-content button{
+    padding: 5px 20px;
+    border-radius: 7px;
+    background-color: green;
+    color: white;
+    border: none;
+}
+.left-content button:hover{
+    filter: drop-shadow(0px 0px 10px rgb(246, 202, 202));
+    cursor: pointer;
+}
+/* SKILLS_PAGE */
+.skills{
+    min-height: 90vh;
+    padding:  70px 20px 0px 20px;
+}
+.skills h1{
+    font-size: 2rem;
+    text-align: center;
+}
+.skill-para{
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 10px;
+}
+.info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+.card{
+    width: 500px;
+    background-color: #181621;
+    padding: 10px 20px 20px 20px;
+    border: 2px solid green;
+    border-radius: 10px;
+}
+.card h1{
+    margin: 0px 0px 20px 0px;
+}
+.card-details{
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.box{
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    gap: 5px;
+    border-radius: 7px;
+    border: 1px solid #83818c;
+}
+.box img{
+    width: 30px;
+    height: 30px;
+}
+.box2{
+    padding: 10px;
+}
+.box2 img{
+    width: 18px;
+    height: 20px;
+}
+/*PROJECT*/
+.projects{
+    padding:  75px 20px 0px 20px;
+    min-height: 100vh;
+}
+.project-cards{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.project-card {
+    width: 550px;
+    text-align: center;
+    border: 2px solid green;
+    border-radius: 7px;
+}
+.project-card img{
+    width: 100%;
+    border-radius: 7px 7px 0px 0px;
+}
+.project-card button{
+    margin: 10px;
+    padding: 5px 15px;
+    border: none;
+    font-weight: bold;
+    border-radius: 5px;
+    color: white;
+    background-color: green;
+    transition: all 1s;
+}
+.project-card button:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 10px white;
+}
+.Project-head{
+    text-align: center;
+    margin: 0px 0px 30px 0px;
+    font-size: 2rem;
+}
+/*EDUCATION_PAGE*/
+.education{
+min-height: 100vh;
+padding: 80px 20px 0px 20px;
+}
+.edu-head{
+    text-align: center;
+    font-size: 2rem;
+}
+.edu-para{
+    text-align: center;
+    margin-top: 10px;
+}
+.edu-details-cards{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+.edu-detail{
+    width: 500px;
+    border: 2px solid green;
+    border-radius: 7px;padding: 10px;
+}
+.edu-detail h2,p{
+    margin: 5px 0px;
+}
+.edu-detail h2{
+    color: green;
+}
+.edu-detail span{
+    color: green;
+}
+/*ABOUT_PAGE*/
+.about{
+    min-height: 90vh;
+    padding: 80px 20px 0px 20px;
+}
+.about-head{
+    text-align: center;
+}
+.about-details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding-top: 40px;
+}
+.about-left{
+    border: 4px solid green;
+    width:300px;
+    height: 300px;
+    position: relative;
+}
+.about-right{
+    width: 400px;
+}
+.about-right h2,h4{
+    margin: 0px  0px 7px 0px;
+}
+.about-right p{
+    line-height: 20px;
+    word-spacing: 5px;
+    text-align: justify;
+}
+.about-right ul li span{
+    color: green;
+    padding-right: 10px;
+    line-height: 25px;
+}
+.about-right ul li {
+    list-style: none;
+}
+.about-right a button{
+    background-color: #4CAF50;
+    padding: 7px 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 7px;
+    font-weight: bold;
+    transition: all 1s;
+}
+.about-right a button:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 10px white;
+}
+.about-left img{
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    border-radius: 7px;
+    top: 20px;
+    right: 20px;
+}
+/*CONTACT_PAGE*/
+.contact{
+    height: 100vh;
+    padding: 80px 20px 0px 20px;
+}
+.contact-head{
+    text-align: center;
+    font-size: 2rem;
+}
+form{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+form .name{
+    display: flex;
+    gap: 50px;
+}
+.name .input{
+    width: 100%;
+}
+.name label{
+    margin: 10px 0px;
+}
+.name input,textarea{
+    width: 100%;
+    height: 40px;
+    margin-bottom: 30px;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    border-bottom: 2px solid green;
+}
+form textarea{
+    width: 100%;
+    height: 100px;
+    resize: none;
+}
+form .btn{
+   float: right;
+   padding: 7px 30px;
+   color: rgb(255, 255, 255);
+   font-weight: bold;
+   background-color: green;
+   border-radius: 0px 30px ;
+   outline: none;
+   border: none;
+}
+.icons{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px ;
+    gap: 20px;
+    font-size: 20px;
+}
+.icons i{
+    color: green;
+}
+/*Footer-page*/
+footer{
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+footer .foot-icon{
+    display: flex;
+    gap: 20px;
+    font-size: 20px;
+}
+/*MOBILE SCREEN*/
+ @media only screen and (min-width:300px) and (max-width:600px){
+    #label{
+        display: block;
+    }
+    nav{
+        overflow: unset;
+    }
+    .subNav{
+        position: absolute;
+       flex-direction: column;
+       background-color:var(--first-litter);
+       height: 90vh;
+       width: 100%;
+       align-items: center;
+       top: 80px;
+       left: 110%;/*Initially hidden*/
+       padding: 20px;
+    }
+    .Home{
+        flex-direction: column;
+    }
+    .left{
+        width: 100%;
+    }
+    .left-content{
+        width: 100%;
+    }
+    .right{
+        width: 100%;
+    }
+    .profile{
+        width: 300px;
+        height: 300px;
+    }
+    .skill-para{
+        text-align: center;
+        font-size: 1rem;
+        margin: 10px;
+    }
+    .card .box{
+        flex-grow: 1;
+    }
+    .edu-detail{
+        width: 100%;
+    }
+    .about-left{
+        width:250px;
+        height:250px;
+    }
+    form .name{
+        flex-wrap: wrap;
+        gap: 0;
+    }
+    .name input,textarea{
+        margin-bottom: 15px;
+    }
+ }
+ @media only screen and (min-width:600px) and (max-width:850px){
+    .left-content{
+        width: 100%;
+    }
+    .profile{
+        width: 300px;
+        height: 300px;
+    }
+  
+ }
